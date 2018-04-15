@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Mqtt web client</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/libs/angular-material/angular-material.css" rel="stylesheet">
+	<link href="assets/libs/angular-resizable/angular-resizable.min.css" rel="stylesheet">
+	<link href="assets/libs/codemirror/lib/codemirror.css" rel="stylesheet">
+	<link href="assets/libs/codemirror/theme/mdn-like.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+
+	<div ng-view layout="column" layout-fill ng-cloak>
+		<!-- LOAD APLICATIONS -->
+	</div>
+	
+
+	<script src="assets/js/avsc.min.js"></script>
+	<script src="assets/js/mqtt.min.js"></script>
+
+	<script src="assets/libs/angular/angular.js"></script>
+	<script src="assets/libs/angular-route/angular-route.js"></script>
+	<script src="assets/libs/angular-aria/angular-aria.js"></script>
+	<script src="assets/libs/angular-animate/angular-animate.js"></script>
+	<script src="assets/libs/angular-material/angular-material.js"></script>
+	<script src="assets/libs/angular-resizable/angular-resizable.min.js"></script>
+	<script src="assets/libs/angular-indexedDB/angular-indexed-db.js"></script>
+	<script src="assets/libs/codemirror/lib/codemirror.js"></script>
+	<script src="assets/libs/codemirror/mode/javascript/javascript.js"></script>
+	<script src="assets/libs/angular-ui-codemirror/ui-codemirror.js"></script>
+
+	<script src="app.services.js"></script>
+	<script src="services/connect.js"></script>
+	<script src="services/avro.js"></script>
+    <script src="services/topic.js"></script>
+	<script src="services/helpers.js"></script>
+	<script src="app.routes.js"></script>
+    <script src="app.directives.js"></script>
+	<script src="app.controllers.js"></script>
+	<script src="controllers/home.controller.js"></script>
+	<script src="controllers/enviroments.controller.js"></script>
+	<script src="app.module.js"></script>
+
+</body>
+</html>

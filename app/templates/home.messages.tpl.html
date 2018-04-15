@@ -1,0 +1,23 @@
+<div ng-repeat="sub in vm.subs" id="sub_{{$index}}">
+	<div class="header" ng-style="{background: sub.color}" layout="row" layout-align="space-between center">
+		{{sub.topic}} ({{sub.msgs}})
+		<span flex></span>
+		<md-checkbox ng-model="sub.cumulate">Keep messages</md-checkbox>
+		<md-button ng-click="vm.clearMessages($index)" class="md-icon-button" title="Clear messages">
+			<md-icon>delete</md-icon>
+		</md-button>
+		<md-button show-and-hide="{{$index}}" class="md-icon-button show-hide">
+			<md-icon>expand_less</md-icon>
+		</md-button>
+	</div>
+	<div class="msgs" msgs="{{vm.subs.length}}"></div>
+</div>
+
+<div ng-show="vm.subs.length === 0" class="empty_messages">
+	<p align="center">
+		<md-icon>message</md-icon>
+	</p>
+	<p align="center">
+		Subscribe to a topic to receive messages here.
+	</p>
+</div>

@@ -1,0 +1,77 @@
+<div id="mqtt_web" layout="column" layout-fill>
+
+	<md-toolbar class="md-primary">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">MQTT web client</h2>
+			<span flex></span>
+			
+			<md-menu>
+				<md-button aria-label="Mais" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+				<md-icon>more_vert</md-icon>
+				</md-button>
+				<md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+				<md-menu-item>
+					<md-button href="#!/enviroments">Manage environments</md-button>
+				</md-menu-item>
+				<md-menu-item>
+					<md-button ng-click="vm.about()">About</md-button>
+				</md-menu-item>
+				</md-menu-content>
+			</md-menu>
+
+		</div>
+	</md-toolbar>
+
+	<md-content flex>
+		<div layout="row" layout-fill>
+
+			<div class="left" layout-align="none center" flex>
+
+				<md-card class="box">
+					<md-card-content data-ng-include="'templates/home.connection.tpl.html'">
+						<!-- INCLUDE CONNECTION OPTIONS -->
+					</md-card-content>
+				</md-card>
+
+				<md-card class="box" layout="row">
+					<md-content flex>
+						
+						<div layout="row" class="md-padding" ng-hide="vm.connected">
+							<p>Choose or configure an environment</p>
+						</div>
+						
+						<md-tabs ng-show="vm.connected" md-dynamic-height md-center-tabs md-border-bottom>
+							
+							<md-tab label="Publish">
+							<md-content data-ng-include="'templates/home.publish.tpl.html'" class="md-padding">
+								<!-- INCLUDE PUBLISH FORM -->
+							</md-content>
+							</md-tab>
+							
+							<md-tab label="Subscribe">
+							<md-content data-ng-include="'templates/home.subscribe.tpl.html'" class="md-padding">
+								<!-- INCLUDE SUBSCRIBE FORM -->
+							</md-content>
+							</md-tab>
+
+							<md-tab label="Subscriptions ({{vm.subs.length}})">
+							<md-content data-ng-include="'templates/home.subscriptions.tpl.html'">
+								<!-- INCLUDE SUBSCRIPTIONS LIST -->
+							</md-content>
+							</md-tab>
+							
+						</md-tabs>
+					</md-content>
+				</md-card>
+
+			</div>
+
+			<div id="messages" ng-show="vm.connected" data-ng-include="'templates/home.messages.tpl.html'" 
+				resizable r-directions="['left']" r-flex="true">
+				<!-- INCLUDE MESSAGES VIEW -->		  		
+			</div>
+
+		</div>
+	</md-content> 
+
+</div>

@@ -1,0 +1,37 @@
+
+<div layout="row" layout-align="start center" style="position:relative">
+	<md-input-container>
+		<label>Environment</label>
+		<md-select ng-model="enviroment">
+			<md-option ng-repeat="(name, env) in vm.enviroments" ng-value="name" ng-click="vm.connect(name)">
+				{{name}}
+			</md-option>
+		</md-select>
+	</md-input-container>
+	
+	<md-button aria-label="Editar" class="md-icon-button" ng-click="conn_edit = !conn_edit;">
+		<btn-conn-options></btn-conn-options> 
+	</md-button>
+
+	<div class="conection_status" ng-class="{ok: vm.connected}"></div>
+</div>
+
+<div layout="row" layout-align="space-between center" ng-show="conn_edit">
+
+	<md-input-container flex="50">
+		<label>Host</label>
+		<input ng-model="vm.enviroment.host">
+	</md-input-container>
+
+	<md-input-container flex="10">
+		<label>Port</label>
+		<input ng-model="vm.enviroment.port">
+	</md-input-container>
+
+	<md-input-container>
+		<md-checkbox class="md-primary" ng-model="vm.enviroment.ssl">SSL</md-checkbox>
+	</md-input-container>
+
+	<md-button ng-show="vm.connected" ng-click="vm.disconnect()" class="md-raised md-primary" style="top:-10px">Disconnect</md-button>
+	<md-button ng-hide="vm.connected" ng-click="vm.connect('edited')" class="md-raised md-primary" style="top:-10px">Connect</md-button>
+</div>

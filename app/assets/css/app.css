@@ -1,0 +1,222 @@
+body {
+	overflow: hidden;
+}
+
+*::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: #c6cade;
+    border: 2px solid #fff;
+}
+
+.box {
+	margin: 20px auto;
+	width: 90%;
+	max-width: 900px;
+}
+
+.box_2 {
+	margin: 20px auto;
+	width: 90%;
+	max-width: 1200px;
+}
+
+.table {
+	width: 100%;
+	border-spacing: 0px;
+}
+
+.table tr:nth-child(even) {background: #f5f5f5}
+
+.table th {
+	padding: 8px;
+	text-align: left
+}
+
+.table td {
+	border-top: 1px solid #ccc;
+    padding: 8px;
+}
+
+.table td.actions {
+	text-align: right
+}
+
+.table td.actions md-icon {
+	cursor: pointer;
+}
+
+.table td.actions md-icon.del {
+	color: #ef5555
+}
+
+
+#mqtt_web .conection_status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	position: absolute;
+	right: 10px;
+	background: #f66;
+}
+
+#mqtt_web .conection_status.ok {
+	background: #00c361;
+}
+
+#mqtt_web .left {
+	background: #eee; overflow-y: auto; padding-top: 20px;
+}
+
+
+/* received messages */
+
+#mqtt_web #messages {
+	width: 550px;
+	height: 100%;
+	min-height: 100%;
+	background: #fff !important;
+}
+
+#mqtt_web #messages .empty_messages {
+	color: #999;
+	position: absolute;
+	width: 100%;
+	height: 80px;
+	top: 50%;
+	margin-top: -40px;
+}
+
+#mqtt_web #messages .header {
+	color: #fff;
+	padding: 5px 10px;
+}
+
+#mqtt_web #messages .header md-icon {
+	color: #fff;
+}
+
+#mqtt_web #messages .header md-checkbox {
+	margin: 0px;
+}
+
+#mqtt_web .msgs {
+	overflow-y: auto;
+    position: relative;
+}
+
+#mqtt_web .msgs .msg {
+	padding: 8px;
+}
+
+#mqtt_web .msgs .topic {
+	color: #2a8e5b;
+	font-size: 13px;
+	font-style: italic;
+	margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+#mqtt_web .msgs .time {
+	color: #868282;
+	font-size: 13px;
+	margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+#mqtt_web .msgs pre {
+	padding-bottom: 15px;
+	border-bottom: 1px dotted #ccc;
+	margin: 0px;
+}
+
+#mqtt_web .msgs .msg:last-child pre {
+	border: none;
+}
+
+/* subscriptions list */
+
+#mqtt_web .list_topics {
+	width: 100%;
+}
+
+#mqtt_web .list_topics thead {
+	background: linear-gradient(to top, #eaeaea, #fff);
+}
+
+#mqtt_web .list_topics th {
+	padding: 8px;
+}
+
+#mqtt_web .list_topics th:first-child {
+	min-width: 200px;
+}
+
+#mqtt_web .list_topics tbody tr:nth-child(even) {
+	background: #eee
+}
+
+#mqtt_web .list_topics tbody tr:nth-child(odd) {
+	background: #fff
+}
+
+#mqtt_web .list_topics td {
+	text-align: center;
+	padding: 0px;
+}
+
+#mqtt_web .list_topics td:first-child {
+	text-align: left;
+	padding-left: 10px;
+}
+
+#mqtt_web .list_topics .md-icon-button.del md-icon {
+	color: #ef5555
+}
+
+
+/* modal messages */
+
+#mqtt_web .list_messages {
+	list-style: none;
+	padding: 0px;
+}
+
+#mqtt_web .list_messages li {
+	letter-spacing: 0.5px;
+    color: #666;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+    border-bottom: 1px solid #eee
+}
+
+#mqtt_web .list_messages li:hover {
+	background: #dcdef7;
+    color: #4b5484;
+}
+
+#mqtt_web .list_messages li span {
+	padding: 8px;
+	width: 100%;
+	cursor:pointer;
+}
+
+#mqtt_web .list_messages li .md-icon-button {
+	float: right; color: #f66;
+}
+
+#mqtt_web .list_messages li .md-icon-button md-icon {
+	color: #f66;
+}

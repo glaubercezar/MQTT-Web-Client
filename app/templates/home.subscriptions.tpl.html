@@ -1,0 +1,28 @@
+<table class="list_topics">
+	<thead>
+		<tr>
+			<th>Topic</th>
+			<th>Msgs</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="sub in vm.subs">
+			<td>
+				<id-color></id-color> {{sub.topic}}
+			</td>
+			<td>{{sub.msgs}}</td>
+			<td>
+				<md-button ng-click="vm.unsubscribe($index)" class="md-icon-button del">
+					<md-icon>clear</md-icon>
+				</md-button>
+				<md-button ng-click="vm.subscribePause($index)" ng-hide="sub.pause" class="md-icon-button">
+					<md-icon>pause</md-icon>
+				</md-button>
+				<md-button ng-click="vm.subscribeStart($index)" ng-show="sub.pause" class="md-icon-button">
+					<md-icon>play_arrow</md-icon>
+				</md-button>
+			</td>
+		</tr>
+	</tbody>
+</table>

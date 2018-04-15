@@ -1,0 +1,26 @@
+<div layout="row">
+	<md-input-container flex="60">
+		<label>Topic</label>
+		<input ng-model="vm.sub.msg.topic">
+	</md-input-container>
+</div>
+
+<div layout="row" ng-if="vm.sub.msg.advanced">
+	<md-input-container flex="100">
+		<label>Schema</label>
+		<textarea ng-model="vm.sub.msg.schema"></textarea>
+	</md-input-container>
+</div>
+
+<div layout="row" layout-align="space-between center">
+	<md-switch ng-model="vm.sub.msg.advanced">Avro</md-switch>
+	<span flex></span>
+	<md-button class="md-icon-button" title="Load a message" ng-click="vm.loadMsg(event, 'sub')">
+		<md-icon>folder_open</md-icon>
+	</md-button>
+	<md-button class="md-icon-button" ng-show="vm.sub.msg.topic" title="Clear Publication Area" ng-click="vm.clearMsg('sub')">
+		<md-icon>clear</md-icon>
+	</md-button>
+	<md-button ng-click="vm.saveMsg('sub')">Save</md-button>
+	<md-button class="md-raised md-primary" ng-click="vm.subscribe()">Subscribe</md-button>
+</div>

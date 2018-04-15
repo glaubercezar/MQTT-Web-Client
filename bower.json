@@ -1,0 +1,18 @@
+{
+  "name": "mqtt_web_client",
+  "description": "Mqtt web client",
+  "main": "index.html",
+  "authors": [
+    "Glauber glauberdf.ti@gmail.com"
+  ],
+  "private": true,
+  "dependencies": {
+    "angular-material": "master",
+    "angular-resizable": "^1.2.0",
+    "angular-route": "^1.6.8",
+    "angular-ui-codemirror": "^0.3.0",
+    "angular-indexedDB": "angular-indexed-db#^1.1.4"
+  },
+  "license": "MIT",
+  "homepage": ""
+}

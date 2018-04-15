@@ -1,0 +1,92 @@
+<div layout="column" layout-fill>
+
+	<md-toolbar class="md-primary">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">MQTT web client</h2>
+			<span flex></span>
+			
+			<md-button href="#!/home">
+				<md-icon>arrow_back</md-icon> Back
+			</md-button>
+
+		</div>
+	</md-toolbar>
+
+	<md-content flex>
+		<div layout="row" layout-fill>
+			<div class="left" layout-align="none center" flex>			  		
+
+				<md-card class="box_2">
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-title">New environment</span>
+						</md-card-title-text>
+					</md-card-title>
+					<md-card-content>
+
+						<form name="vm.env" ng-submit="vm.saveEnviroment()">
+							<div layout="row" layout-align="space-between center">
+				
+								<md-input-container flex="30">
+									<label>Description</label>
+									<input ng-model="vm.env.name" required>
+								</md-input-container>
+
+								<md-input-container flex="40">
+									<label>Host</label>
+									<input ng-model="vm.env.host">
+								</md-input-container>
+
+								<md-input-container flex="10">
+									<label>Port</label>
+									<input ng-model="vm.env.port">
+								</md-input-container>
+
+								<md-input-container>
+									<md-checkbox class="md-primary" ng-model="vm.env.ssl">SSL</md-checkbox>
+								</md-input-container>
+
+							</div>
+
+							<md-card-actions layout="row" layout-align="end center">
+								<md-button type="submit" ng-disabled="!vm.env.$valid" class="md-raised md-primary">&nbsp;&nbsp; Save data &nbsp;&nbsp;</md-button>
+							</md-card-actions>
+							
+						</form>
+						
+					</md-card-content>
+
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-title">Registered environments</span>
+						</md-card-title-text>
+					</md-card-title>
+					<md-card-content>
+						<table class="table">
+							<tr>
+								<th>Description</th>
+								<th>Host</th>
+								<th>Port</th>
+								<th>SSL</th>
+								<th></th>
+							</tr>
+							<tr data-ng-repeat="(name, env) in vm.enviroments">
+								<td>{{name}}</td>
+								<td>{{env.host}}</td>
+								<td>{{env.port}}</td>
+								<td>{{env.ssl}}</td>
+								<td class="actions">
+									<md-icon class="del" ng-click="vm.showConfirm(name)">delete_forever</md-icon>
+								</td>
+							</tr>
+						</table>
+					</md-card-content>
+				</md-card>
+
+				
+
+			</div>
+		</div>
+	</md-content> 
+
+</div>

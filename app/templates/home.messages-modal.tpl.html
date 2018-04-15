@@ -1,0 +1,46 @@
+<md-dialog flex="50">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Messages</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+			<md-icon>close</md-icon>
+		</md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <md-tabs md-dynamic-height md-border-bottom  md-selected="tabSelected">
+        <md-tab label="publish">
+          <md-content class="md-padding">
+            <p>
+            	<ul class="list_messages">
+            		<li ng-repeat="msg in messages | filter:'publish'">
+                    <span ng-click="select(msg)">{{msg.description}}</span>
+                    <md-button ng-click="remove(msg)" class="md-icon-button">
+                      <md-icon>clear</md-icon>
+                    </md-button>
+                </li>
+            	</ul>
+            </p>
+          </md-content>
+        </md-tab>
+        <md-tab label="subscribe">
+          <md-content class="md-padding">
+            <p>
+            	<ul class="list_messages">
+            		<li ng-repeat="msg in messages | filter:'subscribe'">
+                    <span ng-click="select(msg)">{{msg.description}}</span>
+                    <md-button ng-click="remove(msg)" class="md-icon-button">
+                      <md-icon>clear</md-icon>
+                    </md-button>
+                </li>
+            	</ul>
+            </p>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+
+  </form>
+</md-dialog>

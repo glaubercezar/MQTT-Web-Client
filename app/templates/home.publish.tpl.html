@@ -1,0 +1,28 @@
+<div layout="column">
+	<md-input-container flex="60" style="margin-bottom:0px">
+		<label>Topic</label>
+		<input ng-model="vm.pub.msg.topic">
+	</md-input-container>
+	
+	<ui-codemirror ng-model="vm.pub.msg.json" ui-codemirror-opts="vm.editCodemirror" ui-refresh="vm.refreshCodemirror"></ui-codemirror>
+</div>
+
+<div layout="row" ng-if="vm.pub.msg.advanced">
+	<md-input-container flex="100">
+		<label>Schema</label>
+		<textarea ng-model="vm.pub.msg.schema"></textarea>
+	</md-input-container>
+</div>
+
+<div layout="row" layout-align="space-between center">
+	<md-switch ng-model="vm.pub.msg.advanced">Avro</md-switch>
+	<span flex></span>
+	<md-button class="md-icon-button" title="Load message" ng-click="vm.loadMsg(event, 'pub')">
+		<md-icon>folder_open</md-icon>
+	</md-button>
+	<md-button class="md-icon-button" ng-show="vm.pub.msg.json" title="Clear Publication Area" ng-click="vm.clearMsg('pub')">
+		<md-icon>clear</md-icon>
+	</md-button>
+	<md-button ng-click="vm.saveMsg('pub')">Save</md-button>
+	<md-button class="md-raised md-primary" ng-click="vm.publish()">Publish</md-button>
+</div>
