@@ -10,6 +10,22 @@ This web tool runs on any modern browser, which supports websockets. You can use
 + Store and manage connection environments
 + Subscriptions control and received messages
 
+## Installation
+
+Open the terminal in root of the project
+
+Install bower dependencies
+```sh
+bower install
+```
+Install npm dependencies
+```sh
+npm install
+```
+Type gulp to run local Browsersync server
+```sh
+gulp
+```
 ## How to use
 
 You must connect to MQTT broker which supports websockets. Some public brokers:
@@ -48,3 +64,7 @@ This project utilizes:
 + [AngularJS Material](https://material.angularjs.org/latest/) - UI Component framework
 + [MQTT.js](https://github.com/mqttjs/MQTT.js) - A client library for the [MQTT](http://mqtt.org/) protocol
 + [Avsc](https://github.com/mtth/avsc) - Pure JavaScript implementation of the [Avro](http://avro.apache.org/docs/current/) specification
+
+## Screenshots
+
+![publish.png](/screenshots/publish.png?raw=true "Publish message")
