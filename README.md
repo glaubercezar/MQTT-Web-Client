@@ -1,6 +1,6 @@
 # MQTT-Web-Client
 
-This web tool runs on any modern browser, which supports websockets. You can use it to publish and subscribe to JSON messages. Very useful for testing and developing applications which use MQTT over websockets.
+This tool runs on any modern browser, which supports websockets. You can use it to publish and subscribe to JSON messages. Very useful for testing and developing applications which use MQTT over websockets.
 
 ## Features
 
@@ -9,6 +9,8 @@ This web tool runs on any modern browser, which supports websockets. You can use
 + Store and manage messages from publish and subscribe
 + Store and manage connection environments
 + Subscriptions control and received messages
+
+See it in action at [http://glauber.info/apps/mqtt_web_client](http://glauber.info/apps/mqtt_web_client/)
 
 ## Installation
 
@@ -58,13 +60,11 @@ Schema:
 
 To receive the message, you must subscribe with same schema
 
+![publish_box.png](/misc/publish_box.png?raw=true "Publish message")
+
 ## Dependencies
 
 This project utilizes:
 + [AngularJS Material](https://material.angularjs.org/latest/) - UI Component framework
 + [MQTT.js](https://github.com/mqttjs/MQTT.js) - A client library for the [MQTT](http://mqtt.org/) protocol
 + [Avsc](https://github.com/mtth/avsc) - Pure JavaScript implementation of the [Avro](http://avro.apache.org/docs/current/) specification
-
-## Screenshots
-
-![publish.png](/screenshots/publish.png?raw=true "Publish message")
