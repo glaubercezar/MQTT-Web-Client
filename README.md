@@ -5,7 +5,7 @@ This tool runs on any modern browser, which supports websockets. You can use it 
 ## Features
 
 + Send and receive JSON messages
-+ Send and receive serealized messages in Avro [Avro](http://avro.apache.org/docs/current/)
++ Send and receive serialized messages in [Avro](http://avro.apache.org/docs/current/)
 + Store and manage messages from publish and subscribe
 + Store and manage connection environments
 + Subscriptions control and received messages
