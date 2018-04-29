@@ -13,6 +13,9 @@
     "angular-ui-codemirror": "^0.3.0",
     "angular-indexedDB": "angular-indexed-db#^1.1.4"
   },
+    "resolutions": {
+    "angular": "1.6.10"
+  },
   "license": "MIT",
   "homepage": ""
 }
